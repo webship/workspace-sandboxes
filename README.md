@@ -1,4 +1,4 @@
-# @webship/workspace-sandboxes
+# @webship.co/workspace-sandboxes
 
 The **Sandboxes** workspace of the [Webship Workspace](https://github.com/webship/workspace) dashboard:
 the `sandboxes/` folder (type `sites`), its settings file (`core/config/workspace.sandboxes.settings.yml`),
