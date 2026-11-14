@@ -26,6 +26,14 @@
   "workspacePlugin": {
     "name": "sandboxes",
     "label": "Sandboxes",
+    "suggests": {
+      "commands": [
+        {
+          "command": "composer",
+          "hint": "https://getcomposer.org/download/"
+        }
+      ]
+    },
     "workspace": {
       "key": "sandboxes",
       "settingsTemplate": "config/workspace.sandboxes.settings.yml",
