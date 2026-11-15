@@ -81,7 +81,7 @@ bash cmd-tools-hostnames.sh                                # every site of the f
 bash cmd-tools-hostnames.sh mysite --add staging --start   # one more address
 bash cmd-tools-add-users.sh mysite drupal                  # the default accounts of a distribution
 bash cmd-tools-cancel-users.sh mysite drupal               # and away again
-bash cmd-tools-checks.sh mysite --list                     # the checks NAME declares, and what each would run
+bash cmd-tools-checks.sh mysite --list                     # the code-quality checks it declares, and what each would run
 bash cmd-tools-clone.sh mysite --to mysite2                # folder and database under a new name
 bash cmd-tools-backup-sandboxes.sh mysite                  # the folder and the database, into backups/sandboxes/
 bash cmd-tools-remove.sh mysite                            # containers, volumes and folder together
