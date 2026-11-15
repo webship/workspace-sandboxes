@@ -1,0 +1,249 @@
+{
+  "_from": "webship/workspace 1.0.10: core/scripts/args/*.sh and the argparse block of each command of this folder",
+  "_aiFolders": {
+    "cmd-tools-ai-items.sh": [
+      "--add",
+      "--check",
+      "--clone-to",
+      "--confirm",
+      "--fetch",
+      "--filter",
+      "--install",
+      "--list-remote",
+      "--propose",
+      "--pull",
+      "--purpose",
+      "--source",
+      "--status",
+      "--summary",
+      "--to",
+      "--update"
+    ]
+  },
+  "_workspace": [
+    "--help",
+    "--require",
+    "--activate",
+    "--install",
+    "--configure",
+    "--deactivate",
+    "--uninstall",
+    "--check",
+    "--list",
+    "--with-needs",
+    "--permission-mode"
+  ],
+  "cmd-cucumber11-0-x-project.sh": [
+    "--add-users",
+    "--enable",
+    "--install",
+    "--php-version",
+    "--require",
+    "--skip-drop-database",
+    "--skip-set-default-settings"
+  ],
+  "cmd-drupal10-3-x-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupal10-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupal11-0-x-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupal11-4-0-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupal11-4-x-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupal11-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupal12-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupal9-recommended-project.sh": [
+    "--add-users",
+    "--dev",
+    "--enable",
+    "--install",
+    "--launch",
+    "--php-version",
+    "--profile",
+    "--require"
+  ],
+  "cmd-drupalcms2-1-0-project.sh": [
+    "--add-users",
+    "--install",
+    "--php-version"
+  ],
+  "cmd-drupalcms2-x-project.sh": [
+    "--add-users",
+    "--install",
+    "--php-version"
+  ],
+  "cmd-odoo20-project.sh": [
+    "--demo",
+    "--install",
+    "--launch"
+  ],
+  "cmd-tools-add-users.sh": [],
+  "cmd-tools-backup-sandboxes.sh": [],
+  "cmd-tools-cancel-users.sh": [],
+  "cmd-tools-checks.sh": [
+    "--browser",
+    "--e2e",
+    "--fail-fast",
+    "--install",
+    "--list",
+    "--only",
+    "--runner",
+    "--skip"
+  ],
+  "cmd-tools-clone.sh": [
+    "--branch",
+    "--extra-hostname",
+    "--no-build-copy",
+    "--no-db",
+    "--target-workspace",
+    "--to",
+    "--with-workspace-hostname",
+    "--worktree"
+  ],
+  "cmd-tools-hostnames.sh": [
+    "--add",
+    "--remove",
+    "--start",
+    "--with-workspace"
+  ],
+  "cmd-tools-reclaim.sh": [
+    "--apply",
+    "--keep-days",
+    "--list-protected",
+    "--only"
+  ],
+  "cmd-tools-remove.sh": [
+    "--backup",
+    "--force",
+    "--orphans"
+  ],
+  "cmd-tools-screen.sh": [
+    "--follow",
+    "--list",
+    "--log",
+    "--run",
+    "--stop"
+  ],
+  "cmd-tools-testing.sh": [
+    "--browser",
+    "--configure",
+    "--dry-run",
+    "--headed",
+    "--path",
+    "--retry",
+    "--run",
+    "--tags"
+  ],
+  "cmd-tools-update-all.sh": [],
+  "cmd-webship11-0-0-project.sh": [
+    "--add-users",
+    "--enable",
+    "--install",
+    "--php-version",
+    "--require",
+    "--skip-drop-database",
+    "--skip-set-default-settings"
+  ],
+  "cmd-webship11-0-x-project.sh": [
+    "--add-users",
+    "--enable",
+    "--install",
+    "--php-version",
+    "--require",
+    "--skip-drop-database",
+    "--skip-set-default-settings"
+  ],
+  "cmd-webships2-0-0-project.sh": [
+    "--add-users",
+    "--enable",
+    "--install",
+    "--php-version",
+    "--require",
+    "--skip-drop-database",
+    "--skip-set-default-settings"
+  ],
+  "cmd-webships2-0-x-project.sh": [
+    "--add-users",
+    "--enable",
+    "--install",
+    "--php-version",
+    "--require",
+    "--skip-drop-database",
+    "--skip-set-default-settings"
+  ],
+  "cmd-webships3-0-x-project.sh": [
+    "--add-users",
+    "--php-version",
+    "--template"
+  ],
+  "cmd-wordpress-project.sh": [
+    "--install",
+    "--launch",
+    "--php-version"
+  ],
+  "cmd-wpbedrock1-project.sh": [
+    "--install",
+    "--launch",
+    "--php-version"
+  ]
+}

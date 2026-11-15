@@ -1,7 +1,7 @@
 {
   "name": "@webship.co/workspace-sandboxes",
   "version": "1.0.8",
-  "description": "The Sandboxes workspace for Webship Workspace: the `sandboxes/` folder (type sites), its settings file, its 30 commands and its docs, activated as a plugin.",
+  "description": "The Sandboxes workspace for Webship Workspace: the `sandboxes/` folder (type sites), its settings file, its 30 commands, its docs and its AI items (an agent, a skill, a command and a prompt, each in the folder of its kind), activated as a plugin.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "license": "ISC",
@@ -11,6 +11,7 @@
   },
   "files": [
     "dist/src",
+    "ai",
     "commands",
     "config",
     "docs",
@@ -26,6 +27,12 @@
   "workspacePlugin": {
     "name": "sandboxes",
     "label": "Sandboxes",
+    "needs": [
+      "ai-agents",
+      "ai-skills",
+      "ai-commands",
+      "ai-prompts"
+    ],
     "suggests": {
       "commands": [
         {
@@ -73,6 +80,20 @@
         "docs/AGENTS.md",
         "docs/CLAUDE.md",
         "docs/README.md"
+      ]
+    },
+    "ai": {
+      "agents": [
+        "ai/agents/sandboxes-site-builder.md"
+      ],
+      "skills": [
+        "ai/skills/sandboxes-workflow"
+      ],
+      "commands": [
+        "ai/commands/sandboxes-try.md"
+      ],
+      "prompts": [
+        "ai/prompts/sandboxes-try-and-clear.md"
       ]
     },
     "features": [

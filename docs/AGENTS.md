@@ -50,3 +50,13 @@ bash cmd-webships2-0-x-project.sh                     # Webships 2.0.x
 
 Every one locates the workspace from its own path, so there is nothing to export and nothing to
 install. `--help` on any of them lists its arguments.
+
+## AI items for this folder
+
+The plugin of this folder (`@webship.co/workspace-sandboxes`) places its own AI items in the AI folders of the
+workspace, when they are active:
+
+- `sandboxes-site-builder` (`ai-agents/`): Spins up a throwaway site in `sandboxes/` to try one thing, tests it when it matters, and clears it afterwards
+- `sandboxes-workflow` (`ai-skills/`): How work is done in `sandboxes/`: build small, try, prove, clear; every builder and tool with its flags, the settings keys
+- `/sandboxes-try` (`ai-commands/`): `/sandboxes-try <what to try> [name]`: picks the smallest builder, builds the sandbox, reports and offers to remove it
+- `sandboxes-try-and-clear` (`ai-prompts/`): A new session that builds a throwaway site, tries one thing on it, reports and clears it
