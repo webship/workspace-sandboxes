@@ -18,4 +18,17 @@ shift $#;
 trim_project_name ;   # "v11x00b1/" -> "v11x00b1" — see functions/fun-project-name.sh
 
 backup_workspace_item "${PROJECT_NAME}" || exit 1 ;
-(cd ${PROJECT_NAME} && ddev export-db --file=${backups}/${doc_name}/${doc_name}---${PROJECT_NAME}--${BACKUP_TIME}-db.sql.gz) ;
+
+# The database goes beside the archive. A project that runs without one (an Astro or Gatsby site:
+# omit_containers: [db]) has only its files to back up; ddev export-db would fail on it and leave
+# an empty dump behind, which a restore then tries to import.
+dump="${backups}/${doc_name}/${doc_name}---${PROJECT_NAME}--${BACKUP_TIME}-db.sql.gz" ;
+if grep -qsE '^omit_containers:.*\bdb\b' ${PROJECT_NAME}/.ddev/config.yaml ${PROJECT_NAME}/.ddev/config.*.yaml ; then
+  echo "${PROJECT_NAME} runs without a database: its files are backed up, and there is no database to export." ;
+  exit 0 ;
+fi
+if ! (cd ${PROJECT_NAME} && ddev export-db --file="${dump}") ; then
+  [ -s "${dump}" ] || rm -f "${dump}" ;
+  echo "The database of ${PROJECT_NAME} could not be exported: only its files are backed up." ;
+  exit 1 ;
+fi
