@@ -1,5 +1,5 @@
 ---
-description: Spin up a throwaway site in the sandboxes/ folder of the Webship Workspace to try one thing: pick the smallest builder, build, say the address, and offer to remove it when the question is answered.
+description: Spin up a throwaway site in the sandboxes/ folder of the Webship Workspace to try one thing — pick the smallest builder, build, say the address, and offer to remove it when the question is answered.
 argument-hint: '<what to try> [name]'
 ---
 
