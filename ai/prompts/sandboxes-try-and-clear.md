@@ -8,6 +8,7 @@ Try <what> on a throwaway site named <name> in the sandboxes folder, then clear 
 # ~/workspace/sandboxes · https://<name>.ddev.site · container-based (DDEV by default)
 # the builder deletes a project of the same name first: stop if <name> is a site somebody still needs
 # nothing on the host: no composer, drush, npm or mysql outside the site's container
+# a feature to write or a run to read: the book Automated Functional Testing Recipes first (its README.md, then the matching chapter), from .claude/automated-functional-testing-recipes/ in the project, ~/.claude/automated-functional-testing-recipes/ or https://github.com/webship/webship-js-ai-agent/tree/2.0.x/automated-functional-testing-recipes
 
 1. bash cmd-drupal11-recommended-project.sh --help
    tell me the flags it takes
