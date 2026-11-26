@@ -28,7 +28,7 @@ function backup(ddevConfig: string, exportDb: 'ok' | 'fails', core: 'older' | 'w
     'argparse() { cat > /dev/null; PROJECT_NAME="$1"; }',
     'trim_project_name() { PROJECT_NAME="${PROJECT_NAME%/}"; }',
     'backup_workspace_item() { BACKUP_TIME=2026-11-16_00-00-00; mkdir -p "${backups}/${doc_name}"; tar -czf "${backups}/${doc_name}/${doc_name}---$1--${BACKUP_TIME}.tar.gz" "$1" && echo "Backed up $1"; }',
-    'ddev() { echo "ddev $*" >> "${DDEV_LOG}"; if [ "$1" = export-db ]; then local f="${2#--file=}"; : > "${f}";',
+    'ddev() { echo "ddev $*" >> "${DDEV_LOG}"; if [ "$1" = export-db ]; then local f="${2#--file=}"; printf -- "-- part of a dump" > "${f}";',
     '  if [ "${DDEV_EXPORT}" = ok ]; then echo "-- dump" | gzip > "${f}"; return 0; fi;',
     '  echo "Error: failed to export database for site1: unable to export db: service db does not exist"; return 1; fi; }',
     core === 'with-hook' ? hook : '',
@@ -67,7 +67,7 @@ test('an export that fails leaves no empty dump behind, and the backup says so a
 // The core's export_project_db (core 1.0.42, webship/workspace#937): the backup is its, whatever the project keeps.
 const HOOK_OK = 'export_project_db() { echo "export_project_db $1 in $(basename "$(pwd)")" >> "${DDEV_LOG}"; echo "PGDMP" > "$1.dump"; PROJECT_DB_FILE="$1.dump"; }';
 const HOOK_NONE = 'export_project_db() { echo "export_project_db $1" >> "${DDEV_LOG}"; echo "This project has no database to back up: its folder is the whole of it."; return 0; }';
-const HOOK_FAILS = 'export_project_db() { echo "export_project_db $1" >> "${DDEV_LOG}"; : > "$1.sql.gz"; return 1; }';
+const HOOK_FAILS = 'export_project_db() { echo "export_project_db $1" >> "${DDEV_LOG}"; printf -- "-- part of a dump" > "$1.sql.gz"; return 1; }';
 
 test('with the core\'s export_project_db, the backup is its: the platform\'s own dump beside the archive', () => {
   const { r, calls, files } = backup('name: site1\ntype: generic\nomit_containers: [db]\n', 'fails', 'with-hook', HOOK_OK, { 'config.fastapi.yaml': '# a platform that keeps its database\n' });

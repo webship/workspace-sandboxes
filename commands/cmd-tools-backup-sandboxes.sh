@@ -23,9 +23,14 @@ backup_workspace_item "${PROJECT_NAME}" || exit 1 ;
 # webship/workspace#937) writes the dump of the platform whose plugin keeps the database (a FastAPI app's own
 # Postgres), else DDEV's export, and nothing, which it says, for a project that runs without one.
 base="${backups}/${doc_name}/${doc_name}---${PROJECT_NAME}--${BACKUP_TIME}-db" ;
+dump="${base}.sql.gz" ;
+# A dump an export began and did not finish, empty or cut short, is not left behind for a restore to import; a file
+# that was there before is not this backup's to remove.
+dump_was_there='no' ;
+[ -e "${dump}" ] && dump_was_there='yes' ;
 if declare -F export_project_db > /dev/null ; then
   if ! (cd ${PROJECT_NAME} && export_project_db "${base}") ; then
-    [ -s "${base}.sql.gz" ] || rm -f "${base}.sql.gz" ;
+    [ "${dump_was_there}" = 'yes' ] || rm -f "${dump}" ;
     echo "The database of ${PROJECT_NAME} could not be exported: only its files are backed up." ;
     exit 1 ;
   fi
@@ -47,13 +52,12 @@ runs_without_db() {
   done
   return 1 ;
 }
-dump="${base}.sql.gz" ;
 if runs_without_db "${PROJECT_NAME}" ; then
   echo "${PROJECT_NAME} runs without a database: its files are backed up, and there is no database to export." ;
   exit 0 ;
 fi
 if ! (cd ${PROJECT_NAME} && ddev export-db --file="${dump}") ; then
-  [ -s "${dump}" ] || rm -f "${dump}" ;
+  [ "${dump_was_there}" = 'yes' ] || rm -f "${dump}" ;
   echo "The database of ${PROJECT_NAME} could not be exported: only its files are backed up." ;
   exit 1 ;
 fi
